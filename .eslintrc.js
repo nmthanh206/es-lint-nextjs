@@ -1,10 +1,12 @@
 module.exports = {
    env: {
       // browser: false,
-      commonjs: true,
-      es6: true,
-      node: true,
+      // commonjs: true,
+      // es6: true,
+      // node: true,
+      // browser: true,
       browser: true,
+      es2022: true,
    },
    plugins: [
       "eslint-plugin-import",
@@ -12,6 +14,7 @@ module.exports = {
       "import",
       "prettier",
       "simple-import-sort",
+      "unused-imports",
    ],
    extends: [
       "next/core-web-vitals",
@@ -22,9 +25,9 @@ module.exports = {
    ],
    parserOptions: {
       ecmaVersion: "latest",
+      sourceType: "module",
       ecmaFeatures: {
-         experimentalObjectRestSpread: true,
-         jsx: false,
+         jsx: true,
       },
    },
 
@@ -137,5 +140,16 @@ module.exports = {
       // allow multiple line
       "prettier/prettier": "off",
       "no-unused-vars": "warn",
+      // "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+      // "unused-imports/no-unused-imports": "error",
+      // "unused-imports/no-unused-vars": [
+      //    "warn",
+      //    {
+      //       vars: "all",
+      //       varsIgnorePattern: "^_",
+      //       args: "after-used",
+      //       argsIgnorePattern: "^_",
+      //    },
+      // ],
    },
 };
