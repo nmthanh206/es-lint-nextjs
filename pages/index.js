@@ -1,3 +1,4 @@
+import { useWindowScroll } from "@mantine/hooks";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
@@ -7,6 +8,9 @@ import styles from "../styles/Home.module.css";
 const a = 4;
 
 export default function Home() {
+   const [scroll, scrollTo] = useWindowScroll();
+
+   console.log("🚀 ~ file: index.js ~ line 12 ~ Home ~ scroll", scroll);
    return (
       <div className={styles.container}>
          <Head>
@@ -17,7 +21,10 @@ export default function Home() {
 
          <main className={styles.main}>
             <h1 className={styles.title}>
-               Welcome to <a href="https://nextjs.org">Next.js!</a>
+               Welcome to <a href="https://nextjs.org">Next.js! </a>
+            </h1>
+            <h1 className={styles.title}>
+               Scroll position x: {scroll.x}, y: {scroll.y}
             </h1>
 
             <p className={styles.description}>
